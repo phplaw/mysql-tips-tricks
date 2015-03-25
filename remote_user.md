@@ -17,3 +17,19 @@ Notice: If drop unexists user, mysql will cause an error like this:
 ```
 ERROR 1396 (HY000): Operation DROP USER failed for 'testuser'@'localhost'
 ```
+
+```sql
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' 
+    IDENTIFIED BY 'YOUR_PASS' 
+    WITH GRANT OPTION;
+FLUSH PRIVILEGES;  
+
+-- *.* = DB.TABLE you can restrict user to specific database and specific table.
+
+-- 'root'@'%' you can change root with any user you created and % is to allow all IP. You can restrict it by changing %.168.1.1 etc too.
+
+```
+We need to restart mysql to see effect
+```sudo service mysql restart```
