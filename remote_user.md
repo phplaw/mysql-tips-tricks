@@ -33,7 +33,7 @@ FLUSH PRIVILEGES;
 ```
 We need to restart mysql to see effect
 ```sudo service mysql restart```
-```bash
+```sh
 mysql> CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'monty'@'localhost'
     ->     WITH GRANT OPTION;
@@ -46,11 +46,36 @@ mysql> CREATE USER 'dummy'@'localhost';
 ```
 
 
+The accounts created by these statements have the following properties:
+Two of the accounts have a user name of monty and a password of some_pass. 
+Both accounts are superuser accounts with full privileges to do anything. 
+The 'monty'@'localhost' account can be used only when connecting from the local host. 
+The 'monty'@'%' account uses the '%' wildcard for the host part, so it can be used to connect from any host.
+It is necessary to have both accounts for monty to be able to connect from anywhere as monty. 
+Without the localhost account, the anonymous-user account for localhost that is created by mysql_install_db would take precedence when monty connects from the local host. 
+As a result, monty would be treated as an anonymous user. 
+The reason for this is that the anonymous-user account has a more specific Host column value than the 'monty'@'%' account and thus comes earlier in the user table sort order. 
+(user table sorting is discussed in Section 6.2.4, “Access Control, Stage 1: Connection Verification”.)
 
-    The accounts created by these statements have the following properties:
+Set password for a specific mysql user.
+```sql
+SET PASSWORD FOR 'user-name-here'@'hostname-name-here' = PASSWORD('new-password-here');
+```
 
-    Two of the accounts have a user name of monty and a password of some_pass. Both accounts are superuser accounts with full privileges to do anything. The 'monty'@'localhost' account can be used only when connecting from the local host. The 'monty'@'%' account uses the '%' wildcard for the host part, so it can be used to connect from any host.
+You can also use the following sql syntax:
+```sql
+UPDATE mysql.user SET Password=PASSWORD('new-password-here') WHERE User='user-name-here'
+```
 
-    It is necessary to have both accounts for monty to be able to connect from anywhere as monty. Without the localhost account, the anonymous-user account for localhost that is created by mysql_install_db would take precedence when monty connects from the local host. As a result, monty would be treated as an anonymous user. The reason for this is that the anonymous-user account has a more specific Host column value than the 'monty'@'%' account and thus comes earlier in the user table sort order. (user table sorting is discussed in Section 6.2.4, “Access Control, Stage 1: Connection Verification”.)
+In this example, change a password for a user called tom:
+```sql
+SET PASSWORD FOR 'tom'@'localhost' = PASSWORD('foobar');
+```
+OR
+```sql
+UPDATE mysql.user SET Password=PASSWORD('foobar') WHERE User='tom' AND Host='localhost';
+```
+
+
 
 source: http://stackoverflow.com/questions/10236000/allow-all-remote-connections-mysql
