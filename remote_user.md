@@ -13,4 +13,7 @@ GRANT ALL ON foo.* TO bar@'192.168.0.1' IDENTIFIED BY 'PASSWORD';
 REVOKE GRANT OPTION ON foo.* FROM bar@'192.168.0.1';
 ```
 Notice: If drop unexists user, mysql will cause an error like this:
-```ERROR 1396 (HY000): Operation DROP USER failed for 'testuser'@'localhost'```
+
+```
+ERROR 1396 (HY000): Operation DROP USER failed for 'testuser'@'localhost'
+```
