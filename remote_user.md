@@ -76,6 +76,11 @@ OR
 UPDATE mysql.user SET Password=PASSWORD('foobar') WHERE User='tom' AND Host='localhost';
 ```
 
+Finally, reload the privileges to see effect:
+```sql
+flush privileges;
+```
+
 
 
 source: http://stackoverflow.com/questions/10236000/allow-all-remote-connections-mysql
