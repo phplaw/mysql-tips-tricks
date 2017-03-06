@@ -1,3 +1,18 @@
+###Connect to mysql from terminal
+```
+mysql -u root -p'passworld'
+```
+/usr/local/mysql/bin is not in the default $PATH. $PATH is the list of directories that are searched when you try to use an executable without specifying a complete path.
+
+You either need to use the full path (/usr/local/mysql/bin/mysql_executable_here) or add it to your $PATH:
+
+export PATH="$PATH:/usr/local/mysql/bin"
+You can add this line to a file called .profile in your home directory to execute it each time you create a new shell:
+
+echo 'export PATH="$PATH:/usr/local/mysql/bin"' >> ~/.profile
+source ~/.profile
+
+
 Sometime, we need allow user to connect from remote host, so in this case, 
 we have to create new user for this kind of connection. Here the way to do that: 
 ```sql
