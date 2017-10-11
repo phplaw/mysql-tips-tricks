@@ -99,3 +99,13 @@ flush privileges;
 
 
 source: http://stackoverflow.com/questions/10236000/allow-all-remote-connections-mysql
+
+RUN MySQL ON MAC (MAMP PRO)
+```cd /Applications/MAMP/Library/bin/```
+then to run mysql file a had to execute
+
+```./mysql -uUSERNAME -pPASSWORD```
+OR 
+```/Applications/MAMP/Library/bin/mysql -uroot -proot```
+```/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot```
+
