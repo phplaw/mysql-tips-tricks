@@ -27,4 +27,19 @@ UPDATE table_users
     WHERE user_role in ('student', 'assistant', 'admin') AND
           cod_office = '17389551';
           
+          
+          UPDATE table SET Col1 = CASE id 
+                          WHEN 1 THEN 1 
+                          WHEN 2 THEN 2 
+                          WHEN 4 THEN 10 
+                          ELSE Col1 
+                        END, 
+                 Col2 = CASE id 
+                          WHEN 3 THEN 3 
+                          WHEN 4 THEN 12 
+                          ELSE Col2 
+                        END
+             WHERE id IN (1, 2, 3, 4);
+             
+          
           ```
