@@ -16,7 +16,7 @@ UPDATE customers SET fuel_levy = REPLACE(fuel_levy, '%', '') WHERE fuel_levy LIK
 
 MySQL update multiple row with one query
 
-```
+```sql
 UPDATE table_users
     SET cod_user = (case when user_role = 'student' then '622057'
                          when user_role = 'assistant' then '2913659'
