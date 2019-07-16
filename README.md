@@ -41,5 +41,14 @@ UPDATE table_users
                         END
              WHERE id IN (1, 2, 3, 4);
              
+             
+             UPDATE people 
+SET name = 
+  (CASE id WHEN 1 THEN 'Karl'
+           WHEN 2 THEN 'Tom'
+           WHEN 3 THEN 'Mary'
+   END)
+WHERE id IN (1,2,3);
+
           
           ```
