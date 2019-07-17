@@ -50,5 +50,13 @@ SET name =
    END)
 WHERE id IN (1,2,3);
 
+
+update Books
+   set BookName = (CASE BookId WHEN 1000 THEN 'C in Depth'
+   when 1001 THEN 'Java in Depth'
+   END)
+  Where BookId IN(1000,1001);
+   -- https://www.tutorialspoint.com/how-to-bulk-update-mysql-data-with-a-single-query
+
           
           ```
