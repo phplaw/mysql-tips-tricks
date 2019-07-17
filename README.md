@@ -50,6 +50,17 @@ SET name =
    END)
 WHERE id IN (1,2,3);
 
+-- more tutorial
+
+create table Books
+   (
+   BookId int,
+   BookName varchar(200)
+   );
+   
+   insert into Books values(1000,'Introduction to C');
+   insert into UpdateAllDemo values(1001,'Introduction to Java');
+
 
 update Books
    set BookName = (CASE BookId WHEN 1000 THEN 'C in Depth'
