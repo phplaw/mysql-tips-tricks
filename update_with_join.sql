@@ -4,4 +4,5 @@ SET ips.countryid = country.countryid;
 
 -- update
 UPDATE `account_transactions` SET `created` = UNIX_TIMESTAMP(`transaction_datetime`) WHERE created IS NULL;
+-- convert unix to datetime = FROM_UNIXTIME
 
