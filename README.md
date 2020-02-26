@@ -69,9 +69,9 @@ update Books
   Where BookId IN(1000,1001);
    -- https://www.tutorialspoint.com/how-to-bulk-update-mysql-data-with-a-single-query
 
-          
 ```
---- Add permission to user
+### Grant permission for specific mysql user
+--- 
 ```sql
 GRANT  DELETE ON  *.* TO 'rc_developer'@'%'
 ```
