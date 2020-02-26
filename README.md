@@ -70,7 +70,7 @@ update Books
    -- https://www.tutorialspoint.com/how-to-bulk-update-mysql-data-with-a-single-query
 
           
-          ```
+```
 --- Add permission to user
 ```sql
 GRANT  DELETE ON  *.* TO 'rc_developer'@'%'
