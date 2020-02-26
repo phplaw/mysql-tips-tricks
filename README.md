@@ -71,3 +71,7 @@ update Books
 
           
           ```
+--- Add permission to user
+```sql
+GRANT  DELETE ON  *.* TO 'rc_developer'@'%'
+```
