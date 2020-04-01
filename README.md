@@ -73,5 +73,5 @@ update Books
 ### Grant permission for specific mysql user
 --- 
 ```sql
-GRANT  DELETE ON  *.* TO 'rc_developer'@'%'
+GRANT  DELETE ON  *.* TO 'mysql_user'@'%'
 ```
