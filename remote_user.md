@@ -1,8 +1,8 @@
-###Connect to mysql from terminal
+### Connect to mysql from terminal
 ```
 mysql -u root -p'passworld'
 ```
-/usr/local/mysql/bin is not in the default $PATH. $PATH is the list of directories that are searched when you try to use an executable without specifying a complete path.
+`/usr/local/mysql/bin` is not in the default `$PATH`. `$PATH` is the list of directories that are searched when you try to use an executable without specifying a complete path.
 
 You either need to use the full path (`/usr/local/mysql/bin/mysql_executable_here`) or add it to your `$PATH`:
 ```
