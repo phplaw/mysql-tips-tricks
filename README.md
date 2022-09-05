@@ -75,3 +75,8 @@ update Books
 ```sql
 GRANT  DELETE ON  *.* TO 'mysql_user'@'%'
 ```
+
+### GRAIN ALL PERMISSION TO USER BY UPDATE MYSQL DB
+```sql
+UPDATE mysql.user SET Grant_priv = 'Y' WHERE User = 'root';
+```
